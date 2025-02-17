@@ -1,13 +1,19 @@
-import { Montserrat } from "next/font/google";
+import { ReactNode } from "react";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
-
-export default function Button({ text }: { text: string }) {
+export default function Button({
+  circle,
+  children,
+}: {
+  circle?: boolean;
+  children: ReactNode;
+}) {
   return (
     <button
-      className={`${montserrat.className} uppercase p-1.5 pl-5 pr-5 h-min rounded-full text-sm font-black bg-[#582B38] hover:scale-105 transition duration-150 text-[#FF004D]`}
+      className={`uppercase p-1.5 ${
+        !circle ? "pl-5 pr-5" : "aspect-square"
+      } h-min rounded-full flex justify-center items-center text-sm font-black select-none bg-[#121212] hover:bg-[#202020] hover:scale-105 transition duration-150 text-[white]`}
     >
-      {text}
+      {children}
     </button>
   );
 }

@@ -2,10 +2,14 @@ import Button from "./Button";
 
 export default function Navbar() {
   return (
-    <div className="bg-[#181818] p-5 flex gap-10 justify-center items-center text-white">
-      <Button text={"My Work"} />
-      <img className="h-[50px]" src="/logo.svg" />
-      <Button text={"Contact"} />
+    <div className="flex gap-10 justify-between items-center text-white">
+      <img className="h-[45px] select-none" src="/logo.svg" />
+      <div className="flex gap-3">
+        <Button>About Me</Button>
+        <Button circle={true}>
+          <img className="w-5/6" src="/XLogo.svg" alt="X" />
+        </Button>
+      </div>
     </div>
   );
 }
