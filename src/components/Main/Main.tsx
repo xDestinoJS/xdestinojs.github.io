@@ -8,9 +8,9 @@ export default function Main() {
     <div className="lg:flex justify-center items-center">
       <div className="flex justify-center items-center flex-col text-white pt-8 text-left">
         <div className="md:w-5/6 lg:w-[700px]">
-          <h1 className="text-[40px] font-black">👋 I'm xDestino.</h1>
+          <h1 className="text-[40px] font-black">👋 I&apos;m xDestino.</h1>
           <p className={`${spaceGrotesk.className} text-[24px]`}>
-            I'm passionate about programming in general, with a special interest
+            I&apos;m passionate about programming in general, with a special interest
             in web development and design. I enjoy building projects that are
             both clean and visually appealing whenever I have the chance.
           </p>
