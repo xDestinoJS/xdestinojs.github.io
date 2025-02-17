@@ -6,34 +6,40 @@ export default function Project({
   title,
   description,
   image,
+  video,
   column,
 }: {
   title: string;
   description: string;
   image: string;
+  video?: string;
   column?: boolean;
 }) {
   return (
     <div
       className={`${
         spaceGrotesk.className
-      } bg-[#121212] p-5 rounded-[30px] flex justify-content h-[450px] ${
-        column ? "flex-col w-[300px]" : "w-[650px]"
+      } bg-[#121212] p-5 rounded-[30px] flex-col lg:flex-row w-full md:w-2/3 group border-[#212121] hover:scale-[1.02] transition duration-150 border-2 flex justify-content h-max lg:h-[450px] ${
+        column ? "lg:flex-col lg:w-[300px]" : "lg:w-[650px]"
       }`}
     >
-      <img
-        className={`object-cover rounded-[17px] mr-7 aspect-square ${
-          column ? "mb-4 w-full h-3/5" : "w-3/5"
-        }`}
-        src={image}
-        alt=""
-      />
       <div
-        className={`bg-red-400 overflow-hidden ${
-          column ? "w-full h-1/5" : "w-2/5"
+        className={`relative rounded-[17px] w-full mb-4 lg:mb-0 overflow-hidden mr-7 aspect-square ${
+          column ? "lg:mb-4 w-full h-3/5" : "w-3/5"
         }`}
       >
-        <p className="text-[20px] text-left text-gray-30  break-words text-ellipsis">
+        { video && <video className="absolute w-full h-full object-cover" src={video} muted autoPlay loop></video> }
+        <img className={`absolute z-3 w-full h-full object-cover ${video && "group-hover:opacity-0 transition duration-250"}`} src={image} alt=""/>
+      </div>
+
+      
+
+      <div
+        className={`overflow-hidden text-ellipsis w-full ${
+          column ? "w-full min-h-[0px] flex-between" : "w-2/5"
+        }`}
+      >
+        <p className="text-[20px] text-left text-gray-30">
           <span className="text-white font-bold">{title}</span> {description}
         </p>
       </div>

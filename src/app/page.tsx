@@ -9,7 +9,7 @@ const poppins = Poppins({
 
 export default function App() {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center min-h-svh">
       <div className={`${poppins.className} p-8  bg-[#191919] w-[1100px]`}>
         <Navbar />
         <Main />
