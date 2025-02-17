@@ -36,7 +36,7 @@ export default function Project({
 
       <div
         className={`overflow-hidden text-ellipsis w-full ${
-          column ? "w-full min-h-[0px] flex-between" : "w-2/5"
+          column ? "min-h-[0px] flex-between" : "lg:w-3/5"
         }`}
       >
         <p className="text-[20px] text-left text-gray-30">
