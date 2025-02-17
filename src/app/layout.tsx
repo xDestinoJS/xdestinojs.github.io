@@ -10,6 +10,9 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: ReactNode }) {
 	return (
 		<html>
+			<head>
+				<link rel="icon" href="/logoRed.svg" sizes="any" />
+			</head>
 			<body>
 				{children}
 			</body>
